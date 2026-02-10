@@ -6,12 +6,3 @@ router = APIRouter(
 )
 
 
-@router.get('/')
-def list_cars():
-    return {
-        'cars': [
-            {'id': 1, 'modelo': 'Mobi'},
-            {'id': 2, 'modelo': 'Onix'},
-            {'id': 3, 'modelo': 'Kwid'},
-        ]
-    }
