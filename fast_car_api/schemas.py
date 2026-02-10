@@ -19,3 +19,7 @@ class CarPublic(BaseModel):
     factory_year: Optional[int] = None
     model_year: Optional[int] = None
     description: Optional[str] = None
+
+
+class CarList(BaseModel):
+    cars: list[CarPublic]
