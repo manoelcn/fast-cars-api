@@ -9,3 +9,13 @@ class CarSchema(BaseModel):
     factory_year: Optional[int]
     model_year: Optional[int]
     description: Optional[str]
+
+
+class CarPublic(BaseModel):
+    id: int
+    brand: str
+    model: str
+    color: Optional[str]
+    factory_year: Optional[int]
+    model_year: Optional[int]
+    description: Optional[str]
