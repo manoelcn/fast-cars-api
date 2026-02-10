@@ -23,3 +23,12 @@ class CarPublic(BaseModel):
 
 class CarList(BaseModel):
     cars: list[CarPublic]
+
+
+class CarPartialUpdate(BaseModel):
+    brand: Optional[str] = None
+    model: Optional[str] = None
+    color: Optional[str] = None
+    factory_year: Optional[int] = None
+    model_year: Optional[int] = None
+    description: Optional[str] = None
