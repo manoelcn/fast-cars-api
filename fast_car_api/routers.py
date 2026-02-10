@@ -35,3 +35,19 @@ def get_car(car_id: int, session: Session = Depends(get_session)):
     if not car:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='car not found')
     return car
+
+
+@router.put('/{car_id}', response_model=CarPublic)
+def update_car(car_id: int, car: CarSchema, session: Session = Depends(get_session)):
+    db_car = session.get(Car, car_id)
+    if not db_car:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='car not found')
+    db_car.brand = car.brand
+    db_car.model = car.model
+    db_car.color = car.color
+    db_car.factory_year = car.factory_year
+    db_car.model_year = car.model_year
+    db_car.description = car.description
+    session.commit()
+    session.refresh(db_car)
+    return db_car
