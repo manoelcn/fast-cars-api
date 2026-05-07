@@ -66,8 +66,8 @@ pip install -r requirements.txt
 ### 3. Rodar as migrações do banco de dados (Alembic)
 
 ```bash
-alembic revision --autogenerate -m "initial"
 alembic upgrade head
+alembic revision --autogenerate -m "initial"
 ```
 
 ---
